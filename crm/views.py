@@ -128,7 +128,7 @@ def product_edit(request, pk):
            # product.customer = product.id
            product.updated_date = timezone.now()
            product.save()
-           product = Product.objects.filter(created_date__lte=timezone.now())
+           products = Product.objects.filter(created_date__lte=timezone.now())
            return render(request, 'crm/product_list.html', {'products': products})
    else:
        # print("else")

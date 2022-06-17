@@ -162,10 +162,10 @@ def summary(request, pk):
     # change the ‘None’ returned by the query to 0.00
     sum = sum_product_charge.get("charge__sum")
     if sum== None:
-        sum_product_charge = {'product_charge__sum' : Decimal('0')}
+        sum_product_charge = {'charge__sum' : Decimal('0')}
     sum = sum_service_charge.get("service_charge__sum")
     if sum== None:
-        sum_service_charge = {'charge__sum' : Decimal('0')}
+        sum_service_charge = {'service_charge__sum' : Decimal('0')}
 
     total_sum = sum_product_charge["charge__sum"] + sum_service_charge["service_charge__sum"]
 
